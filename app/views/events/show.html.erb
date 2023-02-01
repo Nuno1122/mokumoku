@@ -35,7 +35,10 @@
           </div>
           <div>
             <%= image_tag @event.decorate.thumbnail, class: 'w-100' %>
-          </div>
+          </div>        
+            <% if @event.only_woman == 1 %>
+                    <div>  女性限定 </div>
+            <% end %>
         </div>
       </div>
       <div class="card">
