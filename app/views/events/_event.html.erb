@@ -5,7 +5,7 @@
     <% end %>
     <div class="card-body">
     <% if event.only_woman == 1 %>
-        <div>  女性限定 </div>
+      <h4><%= t('activerecord.attributes.event.only_woman') %></h4>
     <% end %>
       <h4 class="card-title fw-bold">
         <%= link_to event.title, event_path(event)  %>

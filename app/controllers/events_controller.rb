@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class EventsController < ApplicationController
-  
   def index
     @q = Event.future.ransack(params[:q])
     @events = @q.result(distinct: true).includes(:bookmarks, :prefecture, user: { avatar_attachment: :blob })
