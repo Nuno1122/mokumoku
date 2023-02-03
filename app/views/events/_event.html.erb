@@ -4,6 +4,9 @@
       <%= image_tag event.decorate.thumbnail, class: 'card-img-top border-bottom' %>
     <% end %>
     <div class="card-body">
+    <% if event.only_woman.eql?(1) %>
+      <h4><%= t('activerecord.attributes.event.only_woman') %></h4>
+    <% end %>
       <h4 class="card-title fw-bold">
         <%= link_to event.title, event_path(event)  %>
       </h4>
@@ -18,6 +21,7 @@
           <i class="bi bi-calendar"></i>
           <%= l event.held_at, format: :short %>
         </div>
+        
       </div>
       <hr />
       <div class="d-flex align-items-center justify-content-between">
@@ -25,6 +29,7 @@
           <%= image_tag event.user.decorate.avatar, class: 'avatar-sm rounded-circle' %>
           <%= event.user.name %>
         </div>
+        
         <% if logged_in? %>
           <div id="js-event-bookmark-<%= event.id %>">
             <% if current_user.bookmarked?(event) %>
