@@ -36,7 +36,7 @@
           <div>
             <%= image_tag @event.decorate.thumbnail, class: 'w-100' %>
           </div>        
-            <% if @event.only_woman == 1 %>
+            <% if @event.only_woman.eql?(1) %>
                   女性限定
             <% end %>
         </div>
