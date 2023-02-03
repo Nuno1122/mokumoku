@@ -62,7 +62,7 @@ class User < ApplicationRecord
     event.user_id == id
   end
 
-  def gender?(_event)
+  def gender?(event)
     woman?
   end
 
